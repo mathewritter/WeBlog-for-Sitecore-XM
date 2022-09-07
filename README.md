@@ -2,7 +2,7 @@
 
 A blog module for Sitecore.
 
-> :warning: WeBlog is no longer being developed or maintained.
+> :warning: The original WeBlog is no longer being developed or maintained. This is a fork.
 
 ## Features ##
 
@@ -23,7 +23,7 @@ A blog module for Sitecore.
 
 ## Releases ##
 
-WeBlog is released as a Sitecore package, to be installed through the Sitecore Package Installer. Releases are available on the [releases page](https://github.com/WeTeam/WeBlog/releases).
+The original WeBlog is released as a Sitecore package, to be installed through the Sitecore Package Installer. Original releases are available on the [releases page](https://github.com/WeTeam/WeBlog/releases).
 
 ## Documentation ##
 
@@ -31,4 +31,4 @@ Documentation can be found on the [wiki](https://github.com/WeTeam/WeBlog/wiki).
 
 ## Reference Sites ##
 
-Included on the wiki is a list of known [sites using WeBlog](https://github.com/WeTeam/WeBlog/wiki/Sites-Running-WeBlog).
+Included on the wiki is a list of known [sites using the original WeBlog](https://github.com/WeTeam/WeBlog/wiki/Sites-Running-WeBlog).
