@@ -14,8 +14,8 @@
     <PackageReference Include="Sitecore.Mvc" Version="10.1.0" />
   </ItemGroup>
   <ItemGroup Condition="$(Configuration.Contains('sc10.0'))">
-    <PackageReference Include="Sitecore.Analytics" Version="10.0.0" />
-    <PackageReference Include="Sitecore.Mvc" Version="10.0.0" />
+    <PackageReference Include="Sitecore.Analytics" Version="10.2.0" />
+    <PackageReference Include="Sitecore.Mvc" Version="10.2.0" />
   </ItemGroup>
   <ItemGroup Condition="$(Configuration.Contains('sc9.3'))">
     <PackageReference Include="Sitecore.Analytics" Version="9.3.0" />
@@ -59,6 +59,9 @@
     <Content Include="Views\WeBlog\TwitterTimeline.cshtml" />
     <Content Include="Views\WeBlog\EntryNavigation.cshtml" />
     <Content Include="Views\WeBlog\Authors.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Sitecore.Client" Version="10.2.0" />
   </ItemGroup>
   <Target Name="Deploy" AfterTargets="PostBuildEvent">
     <CallTarget Targets="DeployToWeb" Condition="$(SitecorePath) != ''" />

@@ -20,7 +20,7 @@
     <PackageReference Include="Sitecore.FakeDb" Version="3.0.0-alpha1" />
   </ItemGroup>
   <ItemGroup Condition="$(Configuration.Contains('sc10.0'))">
-    <PackageReference Include="Sitecore.Nexus" Version="10.0.0" />
+    <PackageReference Include="Sitecore.Nexus" Version="10.1.2" />
     <PackageReference Include="Sitecore.FakeDb" Version="3.0.0-alpha1" />
   </ItemGroup>
   <ItemGroup Condition="$(Configuration.Contains('sc9.3'))">
