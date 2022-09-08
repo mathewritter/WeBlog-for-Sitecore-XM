@@ -1,38 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <RootNamespace>Sitecore.Modules.WeBlog.UnitTest</RootNamespace>
-    <AssemblyName>Sitecore.Modules.WeBlog.UnitTest</AssemblyName>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <PackageReference Include="Moq" Version="4.13.1" />
-    <PackageReference Include="NUnit" Version="3.12.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
-    <PackageReference Include="Scriban" Version="2.1.1" />
-    <PackageReference Include="System.ValueTuple" Version="4.5.0" Condition="'$(TargetFrameworkVersion)' == 'v4.6.2' or '$(TargetFrameworkVersion)' == 'v4.5.2' or '$(TargetFrameworkVersion)' == 'v4.5'" />
-    <ProjectReference Include="..\..\src\Sitecore.Modules.WeBlog\Sitecore.Modules.WeBlog.csproj" />
-  </ItemGroup>
-  <ItemGroup Condition="$(Configuration.Contains('sc10.1'))">
-    <PackageReference Include="Sitecore.Nexus" Version="10.1.0" />
-    <PackageReference Include="Sitecore.FakeDb" Version="3.0.0-alpha1" />
-  </ItemGroup>
-  <ItemGroup Condition="$(Configuration.Contains('sc10.0'))">
-    <PackageReference Include="Sitecore.Nexus" Version="10.1.2" />
-    <PackageReference Include="Sitecore.FakeDb" Version="3.0.0-alpha1" />
-  </ItemGroup>
-  <ItemGroup Condition="$(Configuration.Contains('sc9.3'))">
-    <PackageReference Include="Sitecore.Nexus" Version="9.3.0" />
-    <PackageReference Include="Sitecore.FakeDb" Version="3.0.0-alpha1" />
-  </ItemGroup>
-  <ItemGroup Condition="$(Configuration.Contains('sc9.2'))">
-    <PackageReference Include="Sitecore.Nexus" Version="9.2.0" />
-    <PackageReference Include="Sitecore.FakeDb" Version="2.0.1" />
-  </ItemGroup>
-  <ItemGroup Condition="$(Configuration.Contains('sc9.1'))">
-    <PackageReference Include="Sitecore.Nexus" Version="9.1.1" />
-    <PackageReference Include="Sitecore.FakeDb" Version="2.0.1" />
-  </ItemGroup>
+	<PropertyGroup>
+		<RootNamespace>Sitecore.Modules.WeBlog.UnitTest</RootNamespace>
+		<AssemblyName>Sitecore.Modules.WeBlog.UnitTest</AssemblyName>
+		<Configurations>Debug sc9.1;Debug sc9.2;Debug sc9.3;Debug sc10.0;Debug sc10.1;Debug sc10.2;Release sc9.1;Release sc9.2;Release sc9.3;Release sc10.0;Release sc10.1;Release sc10.2</Configurations>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+		<Reference Include="System.Web" />
+		<Reference Include="System.Web.ApplicationServices" />
+		<PackageReference Include="Moq" Version="4.13.1" />
+		<PackageReference Include="NUnit" Version="3.12.0" />
+		<PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+		<PackageReference Include="Scriban" Version="2.1.1" />
+		<PackageReference Include="System.ValueTuple" Version="4.5.0" Condition="'$(TargetFrameworkVersion)' == 'v4.6.2' or '$(TargetFrameworkVersion)' == 'v4.5.2' or '$(TargetFrameworkVersion)' == 'v4.5'" />
+		<ProjectReference Include="..\..\src\Sitecore.Modules.WeBlog\Sitecore.Modules.WeBlog.csproj" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc10.2'))">
+		<PackageReference Include="Sitecore.Nexus" Version="10.1.2" />
+		<PackageReference Include="Sitecore.FakeDb" Version="3.0.0-alpha1" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc10.1'))">
+		<PackageReference Include="Sitecore.Nexus" Version="10.1.0" />
+		<PackageReference Include="Sitecore.FakeDb" Version="3.0.0-alpha1" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc10.0'))">
+		<PackageReference Include="Sitecore.Nexus" Version="10.0.0" />
+		<PackageReference Include="Sitecore.FakeDb" Version="3.0.0-alpha1" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc9.3'))">
+		<PackageReference Include="Sitecore.Nexus" Version="9.3.0" />
+		<PackageReference Include="Sitecore.FakeDb" Version="3.0.0-alpha1" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc9.2'))">
+		<PackageReference Include="Sitecore.Nexus" Version="9.2.0" />
+		<PackageReference Include="Sitecore.FakeDb" Version="2.0.1" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc9.1'))">
+		<PackageReference Include="Sitecore.Nexus" Version="9.1.1" />
+		<PackageReference Include="Sitecore.FakeDb" Version="2.0.1" />
+	</ItemGroup>
 </Project>
