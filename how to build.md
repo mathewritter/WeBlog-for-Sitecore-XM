@@ -56,6 +56,7 @@ Cores must be created in Solr for the WeBlog content search indexes.
 1. Create the cores using the `solr create` command:
 
 	solr create -c weblog-master
+	
 	solr create -c weblog-web
 
 1. Copy the `managed-schema` file from the `conf` folder of an existing Sitecore core to the folders of the cores created above.
