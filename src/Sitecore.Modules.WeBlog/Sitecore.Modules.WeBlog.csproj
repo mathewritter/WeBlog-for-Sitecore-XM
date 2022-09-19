@@ -1,113 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <RootNamespace>Sitecore.Modules.WeBlog</RootNamespace>
-    <AssemblyName>Sitecore.Modules.WeBlog</AssemblyName>
-    <Title>WeBlog Core</Title>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Remove="App_Config\Include\WeBlog.Client.config" />
-    <None Remove="App_Config\Include\WeBlog.Comments.Handler.config" />
-    <None Remove="App_Config\Include\WeBlog.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="AntiXSS" Version="4.3.0" />
-    <PackageReference Include="CookComputing.XmlRPCv2" Version="2.5.0" />
-    <PackageReference Include="Scriban" Version="2.1.1" />
-    <Reference Include="System.ServiceModel" />
-  </ItemGroup>
-  <ItemGroup Condition="$(Configuration.Contains('sc10.1'))">
-    <PackageReference Include="Sitecore.Analytics" Version="10.1.0" />
-    <PackageReference Include="Sitecore.Buckets" Version="10.1.0" />
-    <PackageReference Include="Sitecore.Client" Version="10.1.0" />
-    <PackageReference Include="Sitecore.ExperienceEditor" Version="10.1.0" />
-    <PackageReference Include="Sitecore.ExperienceEditor.Speak" Version="10.1.0" />
-    <PackageReference Include="Sitecore.Kernel" Version="10.1.0" />
-    <PackageReference Include="Sitecore.Services.Core" Version="10.1.0" />
-    <PackageReference Include="Sitecore.Services.Infrastructure" Version="10.1.0" />
-    <PackageReference Include="Sitecore.Xdb.Reporting" Version="10.1.0" />
-  </ItemGroup>
-  <ItemGroup Condition="$(Configuration.Contains('sc10.0'))">
-    <PackageReference Include="Sitecore.Analytics" Version="10.0.0" />
-    <PackageReference Include="Sitecore.Buckets" Version="10.0.0" />
-    <PackageReference Include="Sitecore.Client" Version="10.0.0" />
-    <PackageReference Include="Sitecore.ExperienceEditor" Version="10.0.0" />
-    <PackageReference Include="Sitecore.ExperienceEditor.Speak" Version="10.0.0" />
-    <PackageReference Include="Sitecore.Kernel" Version="10.0.0" />
-    <PackageReference Include="Sitecore.Services.Core" Version="10.0.0" />
-    <PackageReference Include="Sitecore.Services.Infrastructure" Version="10.0.0" />
-    <PackageReference Include="Sitecore.Xdb.Reporting" Version="10.0.0" />
-  </ItemGroup>
-  <ItemGroup Condition="$(Configuration.Contains('sc9.3'))">
-    <PackageReference Include="Sitecore.Analytics" Version="9.3.0" />
-    <PackageReference Include="Sitecore.Buckets" Version="9.3.0" />
-    <PackageReference Include="Sitecore.Client" Version="9.3.0" />
-    <PackageReference Include="Sitecore.ExperienceEditor" Version="9.3.0" />
-    <PackageReference Include="Sitecore.ExperienceEditor.Speak" Version="9.3.0" />
-    <PackageReference Include="Sitecore.Kernel" Version="9.3.0" />
-    <PackageReference Include="Sitecore.Services.Core" Version="9.3.0" />
-    <PackageReference Include="Sitecore.Services.Infrastructure" Version="9.3.0" />
-    <PackageReference Include="Sitecore.Xdb.Reporting" Version="9.3.0" />
-  </ItemGroup>
-  <ItemGroup Condition="$(Configuration.Contains('sc9.2'))">
-    <PackageReference Include="Sitecore.Analytics" Version="9.2.0" />
-    <PackageReference Include="Sitecore.Buckets" Version="9.2.0" />
-    <PackageReference Include="Sitecore.Client" Version="9.2.0" />
-    <PackageReference Include="Sitecore.ExperienceEditor" Version="9.2.0" />
-    <PackageReference Include="Sitecore.ExperienceEditor.Speak" Version="9.2.0" />
-    <PackageReference Include="Sitecore.Kernel" Version="9.2.0" />
-    <PackageReference Include="Sitecore.Services.Core" Version="9.2.0" />
-    <PackageReference Include="Sitecore.Services.Infrastructure" Version="9.2.0" />
-    <PackageReference Include="Sitecore.Xdb.Reporting" Version="9.2.0" />
-  </ItemGroup>
-  <ItemGroup Condition="$(Configuration.Contains('sc9.1'))">
-    <PackageReference Include="Sitecore.Analytics" Version="9.1.1" />
-    <PackageReference Include="Sitecore.Buckets" Version="9.1.1" />
-    <PackageReference Include="Sitecore.Client" Version="9.1.1" />
-    <PackageReference Include="Sitecore.ExperienceEditor" Version="9.1.1" />
-    <PackageReference Include="Sitecore.ExperienceEditor.Speak" Version="9.1.1" />
-    <PackageReference Include="Sitecore.Kernel" Version="9.1.1" />
-    <PackageReference Include="Sitecore.Services.Core" Version="9.1.1" />
-    <PackageReference Include="Sitecore.Services.Infrastructure" Version="9.1.1" />
-    <PackageReference Include="Sitecore.Xdb.Reporting" Version="9.1.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Config\Include\WeBlog.Client.config" />
-    <Content Include="App_Config\Include\WeBlog.Comments.Handler.config" />
-    <Content Include="App_Config\Include\WeBlog.config" />
-    <Content Include="App_Config\Include\WeBlog.ContentSearch.Solr.config" />
-    <Content Include="App_Config\Include\WeBlog.ContentSearch.Solr.Master.config" />
-    <Content Include="App_Config\Include\WeBlog.ContentSearch.Solr.Web.config" />
-    <Content Include="App_Config\Include\WeBlog.ExperienceEditor.config" />
-    <Content Include="App_Config\Include\WeBlog.ScribanMailAction.config" />
-    <Content Include="sitecore modules\web\WeBlog\Comment.svc" />
-    <Content Include="sitecore modules\web\WeBlog\MetaBlogApi.ashx" />
-    <Content Include="sitecore modules\web\WeBlog\rsd.ashx" />
-    <Content Include="sitecore modules\web\WeBlog\TagField\chosen-sprite.png" />
-    <Content Include="sitecore modules\web\WeBlog\TagField\chosen.jquery.js" />
-    <Content Include="sitecore modules\web\WeBlog\TagField\chosen.min.css" />
-    <Content Include="sitecore modules\web\WeBlog\TagField\tagfield.css" />
-    <Content Include="sitecore modules\web\WeBlog\TagField\tagField.js" />
-    <Content Include="sitecore\shell\client\Applications\WeBlog\Import.js" />
-    <Content Include="sitecore\shell\client\Applications\WeBlog\JsonDataSource\JsonDataSource.js" />
-    <Content Include="sitecore\shell\client\Applications\WeBlog\JsonDataSource\JsonDataSource.cshtml" />
-    <Content Include="sitecore\shell\client\WeBlog\ExperienceEditor\Commands\EditBlogSettings.js" />
-    <Content Include="sitecore\shell\client\WeBlog\ExperienceEditor\Commands\EditEntrySettings.js" />
-    <Content Include="sitecore\shell\client\WeBlog\ExperienceEditor\Commands\NewCategory.js" />
-    <Content Include="sitecore\shell\client\WeBlog\ExperienceEditor\Commands\NewEntry.js" />
-  </ItemGroup>
-  <Target Name="Deploy" AfterTargets="PostBuildEvent">
-    <CallTarget Targets="DeployToWeb" Condition="$(SitecorePath) != ''" />
-  </Target>
-  <Target Name="DeployToWeb">
-    <Copy SourceFiles="@(Content)" DestinationFiles="@(Content->'$(SitecorePath)\%(RelativeDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
-    <Copy SourceFiles="@(Content)" DestinationFiles="@(Content->'$(SitecoreCDPath)\%(RelativeDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" Condition="$(SitecoreCDPath) != ''" />
-    <CreateItem Include="$(OutDir)$(AssemblyName)*.dll;$(OutDir)AntiXssLibrary.dll;$(OutDir)CookComputing.XmlRPCv2.dll;$(OutDir)Scriban.dll">
-      <Output ItemName="BinFiles" TaskParameter="Include" />
-    </CreateItem>
-    <Copy SourceFiles="@(BinFiles)" DestinationFolder="$(SitecorePath)\bin" />
-    <Copy SourceFiles="@(BinFiles)" DestinationFolder="$(SitecoreCDPath)\bin" Condition="$(SitecoreCDPath) != ''" />
-    <!-- Transform content search config for specific Sitecore versions -->
-    <XslTransformation XslInputPath="App_Config\Include\WeBlog.ContentSearch.Solr.config.9.1.xslt" XmlInputPaths="App_Config\Include\WeBlog.ContentSearch.Solr.config" OutputPaths="$(SitecorePath)\App_Config\Include\WeBlog.ContentSearch.Solr.config" Condition="$(SitecorePath) != '' AND $(Configuration.Contains('sc9.1'))" />
-  </Target>
+	<PropertyGroup>
+		<RootNamespace>Sitecore.Modules.WeBlog</RootNamespace>
+		<AssemblyName>Sitecore.Modules.WeBlog</AssemblyName>
+		<Title>WeBlog Core</Title>
+		<Configurations>Debug sc9.1;Debug sc9.2;Debug sc9.3;Debug sc10.0;Debug sc10.1;Debug sc10.2;Release sc9.1;Release sc9.2;Release sc9.3;Release sc10.0;Release sc10.1;Release sc10.2</Configurations>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="App_Config\Include\WeBlog.Client.config" />
+		<None Remove="App_Config\Include\WeBlog.Comments.Handler.config" />
+		<None Remove="App_Config\Include\WeBlog.config" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AntiXSS" Version="4.3.0" />
+		<PackageReference Include="CookComputing.XmlRPCv2" Version="2.5.0" />
+		<PackageReference Include="Scriban" Version="2.1.1" />
+		<Reference Include="System.ServiceModel" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc10.2'))">
+		<PackageReference Include="Sitecore.Analytics" Version="10.2.0" />
+		<PackageReference Include="Sitecore.Buckets" Version="10.2.0" />
+		<PackageReference Include="Sitecore.Client" Version="10.2.0" />
+		<PackageReference Include="Sitecore.ExperienceEditor" Version="10.2.0" />
+		<PackageReference Include="Sitecore.ExperienceEditor.Speak" Version="10.2.0" />
+		<PackageReference Include="Sitecore.Kernel" Version="10.2.0" />
+		<PackageReference Include="Sitecore.Services.Core" Version="10.2.0" />
+		<PackageReference Include="Sitecore.Services.Infrastructure" Version="10.2.0" />
+		<PackageReference Include="Sitecore.Xdb.Reporting" Version="10.2.0" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc10.1'))">
+		<PackageReference Include="Sitecore.Analytics" Version="10.1.0" />
+		<PackageReference Include="Sitecore.Buckets" Version="10.1.0" />
+		<PackageReference Include="Sitecore.Client" Version="10.1.0" />
+		<PackageReference Include="Sitecore.ExperienceEditor" Version="10.1.0" />
+		<PackageReference Include="Sitecore.ExperienceEditor.Speak" Version="10.1.0" />
+		<PackageReference Include="Sitecore.Kernel" Version="10.1.0" />
+		<PackageReference Include="Sitecore.Services.Core" Version="10.1.0" />
+		<PackageReference Include="Sitecore.Services.Infrastructure" Version="10.1.0" />
+		<PackageReference Include="Sitecore.Xdb.Reporting" Version="10.1.0" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc10.0'))">
+		<PackageReference Include="Sitecore.Analytics" Version="10.0.0" />
+		<PackageReference Include="Sitecore.Buckets" Version="10.0.0" />
+		<PackageReference Include="Sitecore.Client" Version="10.0.0" />
+		<PackageReference Include="Sitecore.ExperienceEditor" Version="10.0.0" />
+		<PackageReference Include="Sitecore.ExperienceEditor.Speak" Version="10.0.0" />
+		<PackageReference Include="Sitecore.Kernel" Version="10.0.0" />
+		<PackageReference Include="Sitecore.Services.Core" Version="10.0.0" />
+		<PackageReference Include="Sitecore.Services.Infrastructure" Version="10.0.0" />
+		<PackageReference Include="Sitecore.Xdb.Reporting" Version="10.0.0" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc9.3'))">
+		<PackageReference Include="Sitecore.Analytics" Version="9.3.0" />
+		<PackageReference Include="Sitecore.Buckets" Version="9.3.0" />
+		<PackageReference Include="Sitecore.Client" Version="9.3.0" />
+		<PackageReference Include="Sitecore.ExperienceEditor" Version="9.3.0" />
+		<PackageReference Include="Sitecore.ExperienceEditor.Speak" Version="9.3.0" />
+		<PackageReference Include="Sitecore.Kernel" Version="9.3.0" />
+		<PackageReference Include="Sitecore.Services.Core" Version="9.3.0" />
+		<PackageReference Include="Sitecore.Services.Infrastructure" Version="9.3.0" />
+		<PackageReference Include="Sitecore.Xdb.Reporting" Version="9.3.0" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc9.2'))">
+		<PackageReference Include="Sitecore.Analytics" Version="9.2.0" />
+		<PackageReference Include="Sitecore.Buckets" Version="9.2.0" />
+		<PackageReference Include="Sitecore.Client" Version="9.2.0" />
+		<PackageReference Include="Sitecore.ExperienceEditor" Version="9.2.0" />
+		<PackageReference Include="Sitecore.ExperienceEditor.Speak" Version="9.2.0" />
+		<PackageReference Include="Sitecore.Kernel" Version="9.2.0" />
+		<PackageReference Include="Sitecore.Services.Core" Version="9.2.0" />
+		<PackageReference Include="Sitecore.Services.Infrastructure" Version="9.2.0" />
+		<PackageReference Include="Sitecore.Xdb.Reporting" Version="9.2.0" />
+	</ItemGroup>
+	<ItemGroup Condition="$(Configuration.Contains('sc9.1'))">
+		<PackageReference Include="Sitecore.Analytics" Version="9.1.1" />
+		<PackageReference Include="Sitecore.Buckets" Version="9.1.1" />
+		<PackageReference Include="Sitecore.Client" Version="9.1.1" />
+		<PackageReference Include="Sitecore.ExperienceEditor" Version="9.1.1" />
+		<PackageReference Include="Sitecore.ExperienceEditor.Speak" Version="9.1.1" />
+		<PackageReference Include="Sitecore.Kernel" Version="9.1.1" />
+		<PackageReference Include="Sitecore.Services.Core" Version="9.1.1" />
+		<PackageReference Include="Sitecore.Services.Infrastructure" Version="9.1.1" />
+		<PackageReference Include="Sitecore.Xdb.Reporting" Version="9.1.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="App_Config\Include\WeBlog.Client.config" />
+		<Content Include="App_Config\Include\WeBlog.Comments.Handler.config" />
+		<Content Include="App_Config\Include\WeBlog.config" />
+		<Content Include="App_Config\Include\WeBlog.ContentSearch.Solr.config" />
+		<Content Include="App_Config\Include\WeBlog.ContentSearch.Solr.Master.config" />
+		<Content Include="App_Config\Include\WeBlog.ContentSearch.Solr.Web.config" />
+		<Content Include="App_Config\Include\WeBlog.ExperienceEditor.config" />
+		<Content Include="App_Config\Include\WeBlog.ScribanMailAction.config" />
+		<Content Include="sitecore modules\web\WeBlog\Comment.svc" />
+		<Content Include="sitecore modules\web\WeBlog\MetaBlogApi.ashx" />
+		<Content Include="sitecore modules\web\WeBlog\rsd.ashx" />
+		<Content Include="sitecore modules\web\WeBlog\TagField\chosen-sprite.png" />
+		<Content Include="sitecore modules\web\WeBlog\TagField\chosen.jquery.js" />
+		<Content Include="sitecore modules\web\WeBlog\TagField\chosen.min.css" />
+		<Content Include="sitecore modules\web\WeBlog\TagField\tagfield.css" />
+		<Content Include="sitecore modules\web\WeBlog\TagField\tagField.js" />
+		<Content Include="sitecore\shell\client\Applications\WeBlog\Import.js" />
+		<Content Include="sitecore\shell\client\Applications\WeBlog\JsonDataSource\JsonDataSource.js" />
+		<Content Include="sitecore\shell\client\Applications\WeBlog\JsonDataSource\JsonDataSource.cshtml" />
+		<Content Include="sitecore\shell\client\WeBlog\ExperienceEditor\Commands\EditBlogSettings.js" />
+		<Content Include="sitecore\shell\client\WeBlog\ExperienceEditor\Commands\EditEntrySettings.js" />
+		<Content Include="sitecore\shell\client\WeBlog\ExperienceEditor\Commands\NewCategory.js" />
+		<Content Include="sitecore\shell\client\WeBlog\ExperienceEditor\Commands\NewEntry.js" />
+	</ItemGroup>
+	<Target Name="Deploy" AfterTargets="PostBuildEvent">
+		<CallTarget Targets="DeployToWeb" Condition="$(SitecorePath) != ''" />
+	</Target>
+	<Target Name="DeployToWeb">
+		<Copy SourceFiles="@(Content)" DestinationFiles="@(Content->'$(SitecorePath)\%(RelativeDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+		<Copy SourceFiles="@(Content)" DestinationFiles="@(Content->'$(SitecoreCDPath)\%(RelativeDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" Condition="$(SitecoreCDPath) != ''" />
+		<CreateItem Include="$(OutDir)$(AssemblyName)*.dll;$(OutDir)AntiXssLibrary.dll;$(OutDir)CookComputing.XmlRPCv2.dll;$(OutDir)Scriban.dll">
+			<Output ItemName="BinFiles" TaskParameter="Include" />
+		</CreateItem>
+		<Copy SourceFiles="@(BinFiles)" DestinationFolder="$(SitecorePath)\bin" />
+		<Copy SourceFiles="@(BinFiles)" DestinationFolder="$(SitecoreCDPath)\bin" Condition="$(SitecoreCDPath) != ''" />
+		<!-- Transform content search config for specific Sitecore versions -->
+		<XslTransformation XslInputPath="App_Config\Include\WeBlog.ContentSearch.Solr.config.9.1.xslt" XmlInputPaths="App_Config\Include\WeBlog.ContentSearch.Solr.config" OutputPaths="$(SitecorePath)\App_Config\Include\WeBlog.ContentSearch.Solr.config" Condition="$(SitecorePath) != '' AND $(Configuration.Contains('sc9.1'))" />
+	</Target>
 </Project>
