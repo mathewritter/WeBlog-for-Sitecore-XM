@@ -27,7 +27,7 @@ The original WeBlog is released as a Sitecore package, to be installed through t
 
 ## Documentation ##
 
-Documentation can be found on the [wiki](https://github.com/WeTeam/WeBlog/wiki).
+Documentation can be found on the original WeBlog [wiki](https://github.com/WeTeam/WeBlog/wiki).
 
 ## Reference Sites ##
 
