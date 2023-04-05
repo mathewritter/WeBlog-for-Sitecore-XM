@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<RootNamespace>Sitecore.Modules.WeBlog.UnitTest</RootNamespace>
 		<AssemblyName>Sitecore.Modules.WeBlog.UnitTest</AssemblyName>
-		<Configurations>Debug sc9.1;Debug sc9.2;Debug sc9.3;Debug sc10.0;Debug sc10.1;Debug sc10.2;Release sc9.1;Release sc9.2;Release sc9.3;Release sc10.0;Release sc10.1;Release sc10.2</Configurations>
+		<Configurations>Debug sc9.1;Debug sc9.2;Debug sc9.3;Debug sc10.0;Debug sc10.1;Debug sc10.2;Release sc9.1;Release sc9.2;Release sc9.3;Release sc10.0;Release sc10.1;Release sc10.2;Debug sc10.3;Release sc10.3</Configurations>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
@@ -16,6 +16,10 @@
 		<PackageReference Include="System.ValueTuple" Version="4.5.0" Condition="'$(TargetFrameworkVersion)' == 'v4.6.2' or '$(TargetFrameworkVersion)' == 'v4.5.2' or '$(TargetFrameworkVersion)' == 'v4.5'" />
 		<ProjectReference Include="..\..\src\Sitecore.Modules.WeBlog\Sitecore.Modules.WeBlog.csproj" />
 	</ItemGroup>
+  <ItemGroup Condition="$(Configuration.Contains('sc10.3'))">
+    <PackageReference Include="Sitecore.Nexus" Version="10.1.2" />
+    <PackageReference Include="Sitecore.FakeDb" Version="3.0.0-alpha1" />
+  </ItemGroup>
 	<ItemGroup Condition="$(Configuration.Contains('sc10.2'))">
 		<PackageReference Include="Sitecore.Nexus" Version="10.1.2" />
 		<PackageReference Include="Sitecore.FakeDb" Version="3.0.0-alpha1" />

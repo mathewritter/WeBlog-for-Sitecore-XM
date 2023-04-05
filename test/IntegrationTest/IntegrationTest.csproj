@@ -3,7 +3,7 @@
   <PropertyGroup>
     <RootNamespace>Sitecore.Modules.WeBlog.IntegrationTest</RootNamespace>
     <AssemblyName>Sitecore.Modules.WeBlog.IntegrationTest</AssemblyName>
-    <Configurations>Debug sc9.1;Debug sc9.2;Debug sc9.3;Debug sc10.0;Debug sc10.1;Debug sc10.2;Release sc9.1;Release sc9.2;Release sc9.3;Release sc10.0;Release sc10.1;Release sc10.2</Configurations>
+    <Configurations>Debug sc9.1;Debug sc9.2;Debug sc9.3;Debug sc10.0;Debug sc10.1;Debug sc10.2;Debug sc10.3;Release sc9.1;Release sc9.2;Release sc9.3;Release sc10.0;Release sc10.1;Release sc10.2;Release sc10.3</Configurations>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="App_Config\Include\zWeBlog.Test.ContentSearch.Solr.config" />

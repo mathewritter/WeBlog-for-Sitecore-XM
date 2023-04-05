@@ -4,11 +4,15 @@
     <RootNamespace>Sitecore.Modules.WeBlog.Mvc</RootNamespace>
     <AssemblyName>Sitecore.Modules.WeBlog.Mvc</AssemblyName>
     <Title>WeBlog MVC</Title>
-    <Configurations>Debug sc9.1;Debug sc9.2;Debug sc9.3;Debug sc10.0;Debug sc10.1;Debug sc10.2;Release sc9.1;Release sc9.2;Release sc9.3;Release sc10.0;Release sc10.1;Release sc10.2</Configurations>
+    <Configurations>Debug sc9.1;Debug sc9.2;Debug sc9.3;Debug sc10.0;Debug sc10.1;Debug sc10.2;Debug sc10.3;Release sc9.1;Release sc9.2;Release sc9.3;Release sc10.0;Release sc10.1;Release sc10.2;Release sc10.3</Configurations>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.ComponentModel.DataAnnotations" />
 	<ProjectReference Include="..\..\src\Sitecore.Modules.WeBlog\Sitecore.Modules.WeBlog.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="$(Configuration.Contains('sc10.3'))">
+    <PackageReference Include="Sitecore.Analytics" Version="10.3.0" />
+    <PackageReference Include="Sitecore.Mvc" Version="10.3.0" />
   </ItemGroup>
   <ItemGroup Condition="$(Configuration.Contains('sc10.2'))">
     <PackageReference Include="Sitecore.Analytics" Version="10.2.0" />
@@ -66,7 +70,7 @@
     <Content Include="Views\WeBlog\Authors.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Sitecore.Client" Version="10.2.0" />
+    <PackageReference Include="Sitecore.Client" Version="10.3.0" />
   </ItemGroup>
   <Target Name="Deploy" AfterTargets="PostBuildEvent">
     <CallTarget Targets="DeployToWeb" Condition="$(SitecorePath) != ''" />
