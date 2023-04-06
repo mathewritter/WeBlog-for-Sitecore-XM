@@ -4,9 +4,9 @@
 		<OutputType>Library</OutputType>
 		<Authors>WeBlog Community</Authors>
 		<Company>WeTeam Community</Company>
-		<Product>WeBlog</Product>
+		<Product>WeBlog for Sitecore XM</Product>
 		<Copyright>Copyright ©  2011 - 2021</Copyright>
-		<Version>4.2.2</Version>
+		<Version>1.0</Version>
 		<Configurations>Debug sc9.1;Debug sc9.2;Debug sc9.3;Debug sc10.0;Debug sc10.1;Debug sc10.2;Debug sc10.3;Release sc9.1;Release sc9.2;Release sc9.3;Release sc10.0;Release sc10.1;Release sc10.2;Release sc10.3</Configurations>
 	</PropertyGroup>
 	<PropertyGroup Condition="$(Configuration.Contains('Debug'))">
