@@ -11,7 +11,6 @@ A blog module for Sitecore.
 - Wordpress Import
 - CSS-based themes, with custom themes possible
 - Various blog navigation components
-- Comments with author notification and optional approval workflow
 - Leverage Sitecore's robot detection for comment submission (no CAPTCHA necessary)
 - Gravatar Support
 - Social sharing through ShareThis or AddThis, and other Facebook and Twitter widgets
@@ -19,7 +18,6 @@ A blog module for Sitecore.
 - RSS Feeds (Sitecore Integrated RSS)
 - Multi-server (staged architecture) support
 - Globalized labels and messaging (English, Danish, Dutch, German and Japanese translations provided)
-- Akismet comment spam checker
 
 ## Releases ##
 
