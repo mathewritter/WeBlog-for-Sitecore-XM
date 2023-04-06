@@ -29,4 +29,9 @@
 		<SitecorePath>C:\inetpub\WeBlog\Sitecore 10.2\cm</SitecorePath>
 		<SitecoreCDPath>C:\inetpub\WeBlog\Sitecore 10.2\cd</SitecoreCDPath>
 	</PropertyGroup>
+
+	<PropertyGroup Condition="$(Configuration.Contains('sc10.3'))">
+		<SitecorePath>C:\inetpub\WeBlog\Sitecore 10.3\cm</SitecorePath>
+		<SitecoreCDPath>C:\inetpub\WeBlog\Sitecore 10.3\cd</SitecoreCDPath>
+	</PropertyGroup>
 </Project>
