@@ -20,7 +20,7 @@ A blog module for Sitecore XM.
 - Globalized labels and messaging (English, Danish, Dutch, German and Japanese translations provided)
 
 ## Removed and Non-Working Features from Original WeBlog ##
-Sitecore XM does not have XDB reporting so code and items related to interesting entries using visitor statistics have been removed to make this version function Sitecore XM. Comment related code is still present but it will not function if used.
+Sitecore XM does not have XDB reporting so code and items related to interesting entries using visitor statistics have been removed to make this version function with Sitecore XM. Comment related code is still present but it will not function if used.
 
 ## Releases ##
 
