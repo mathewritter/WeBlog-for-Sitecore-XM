@@ -19,6 +19,9 @@ A blog module for Sitecore XM.
 - Multi-server (staged architecture) support
 - Globalized labels and messaging (English, Danish, Dutch, German and Japanese translations provided)
 
+## Removed and Non-Working Features from Original WeBlog ##
+Sitecore XM does not have XDB reporting so code and items related to interesting entries using visitor statistics have been removed to make this version function Sitecore XM. Comment related code is still present but it will not function if used.
+
 ## Releases ##
 
 The original WeBlog is released as a Sitecore package, to be installed through the Sitecore Package Installer. Original releases are available on the [releases page](https://github.com/WeTeam/WeBlog/releases).
