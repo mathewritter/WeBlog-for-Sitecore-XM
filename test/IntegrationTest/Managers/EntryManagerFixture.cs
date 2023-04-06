@@ -1,11 +1,8 @@
-﻿using Moq;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Sitecore.Data;
 using Sitecore.Modules.WeBlog.Managers;
 using Sitecore.Modules.WeBlog.Search;
-//using Sitecore.Xdb.Reporting;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
@@ -60,7 +57,7 @@ namespace Sitecore.Modules.WeBlog.IntegrationTest.Managers
                 name: "Luna",
                 tags: "tag",
                 entryDate: entryDate);
-            
+
             TestUtil.UpdateIndex();
 
             var manager = new EntryManager();
@@ -89,7 +86,7 @@ namespace Sitecore.Modules.WeBlog.IntegrationTest.Managers
             var results = manager.GetBlogEntries(blog, EntryCriteria.AllEntries, ListOrder.Ascending);
             var ids = from result in results.Results select result.Uri.ItemID;
 
-            Assert.That(ids, Is.EqualTo(new[] { entryLuna.ID, entryDeimos.ID, entryPhobos.ID  }));
+            Assert.That(ids, Is.EqualTo(new[] { entryLuna.ID, entryDeimos.ID, entryPhobos.ID }));
         }
 
         [Test]
@@ -349,7 +346,7 @@ namespace Sitecore.Modules.WeBlog.IntegrationTest.Managers
             {
                 PageNumber = 1,
                 PageSize = 10,
-                Category= categoryAlpha.ID.ToString()
+                Category = categoryAlpha.ID.ToString()
             };
 
             var results = manager.GetBlogEntries(blog, criteria, ListOrder.Descending);
@@ -556,107 +553,5 @@ namespace Sitecore.Modules.WeBlog.IntegrationTest.Managers
 
             Assert.That(entries, Is.Empty);
         }
-
-        //[Test]
-        //public void GetPopularEntriesByView_ValidItem()
-        //{
-        //    VerifyAnalyticsSetup();
-
-        //    var blog = TestUtil.CreateNewBlog(TestContentRoot);
-        //    var entryLuna = TestUtil.CreateNewEntry(blog, "Luna");
-        //    var entryDeimos = TestUtil.CreateNewEntry(blog, "Deimos");
-        //    var entryPhobos = TestUtil.CreateNewEntry(blog, "Phobos");
-        //    TestUtil.UpdateIndex();
-
-        //    var manager = CreateEntryManagerForAnalyticsTest(entryLuna.ID, entryPhobos.ID, entryDeimos.ID);
-
-        //    var entries = manager.GetPopularEntriesByView(blog, int.MaxValue);
-        //    var entryIds = from entry in entries select entry.ItemID;
-
-        //    Assert.That(entryIds, Is.EqualTo(new[] { entryLuna.ID, entryPhobos.ID, entryDeimos.ID }));
-        //}
-
-        //[Test]
-        //public void GetPopularEntriesByView_ValidItem_Limited()
-        //{
-        //    VerifyAnalyticsSetup();
-
-        //    var blog = TestUtil.CreateNewBlog(TestContentRoot);
-        //    var entryLuna = TestUtil.CreateNewEntry(blog, "Luna");
-        //    var entryDeimos = TestUtil.CreateNewEntry(blog, "Deimos");
-        //    var entryPhobos = TestUtil.CreateNewEntry(blog, "Phobos");
-        //    TestUtil.UpdateIndex();
-
-        //    var manager = CreateEntryManagerForAnalyticsTest(entryLuna.ID, entryPhobos.ID, entryDeimos.ID);
-
-        //    var entries = manager.GetPopularEntriesByView(blog, 1);
-        //    var entryIds = from entry in entries select entry.ItemID;
-
-        //    Assert.That(entryIds, Is.EqualTo(new[] { entryLuna.ID }));
-        //}
-
-        //[Test]
-        //public void GetPopularEntriesByView_InvalidItem()
-        //{
-        //    VerifyAnalyticsSetup();
-
-        //    var manager = CreateEntryManagerForAnalyticsTest();
-        //    var entries = manager.GetPopularEntriesByView(TestContentRoot, int.MaxValue);
-
-        //    Assert.That(entries, Is.Empty);
-        //}
-
-        //[Test]
-        //public void GetPopularEntriesByView_NullItem()
-        //{
-        //    VerifyAnalyticsSetup();
-
-        //    var manager = CreateEntryManagerForAnalyticsTest();
-        //    var entries = manager.GetPopularEntriesByView(null, int.MaxValue);
-
-        //    Assert.That(entries, Is.Empty);
-        //}
-
-
-
-        // TODO: Write tests for methods accepting language
-
-        private void VerifyAnalyticsSetup()
-        {
-            bool enabled = Sitecore.Configuration.Settings.GetBoolSetting("Analytics.Enabled", false)
-                || Sitecore.Configuration.Settings.GetBoolSetting("Xdb.Enabled", false);
-
-            Assert.True(enabled, "Sitecore.Analytics must be enabled to test");
-        }
-
-        //private EntryManager CreateEntryManagerForAnalyticsTest(params ID[] popularEntryIdsInOrder)
-        //{
-        //    var reportProvider = CreateMockReportDataProvider(popularEntryIdsInOrder);
-        //    return new EntryManager(reportProvider, null, null, null, null);
-        //}
-
-        //private ReportDataProviderBase CreateMockReportDataProvider(IEnumerable<ID> ids)
-        //{
-        //    var reportingProviderMock = new Mock<ReportDataProviderBase>();
-
-        //    var visitCount = ids.Count();
-        //    foreach (var id in ids)
-        //    {
-        //        var dataTable = new System.Data.DataTable();
-        //        dataTable.Columns.AddRange(new[]
-        //        {
-        //            new DataColumn("Visits", typeof(long))
-        //        });
-
-        //        dataTable.Rows.Add(visitCount);
-        //        visitCount--;
-
-        //        reportingProviderMock.Setup(x =>
-        //            x.GetData(It.IsAny<string>(),
-        //                It.Is<ReportDataQuery>(y => y.Parameters["@ItemId"].Equals(id)), It.IsAny<CachingPolicy>())).Returns(new ReportDataResponse(() => dataTable));
-        //    }
-
-        //    return reportingProviderMock.Object;
-        //}
     }
 }

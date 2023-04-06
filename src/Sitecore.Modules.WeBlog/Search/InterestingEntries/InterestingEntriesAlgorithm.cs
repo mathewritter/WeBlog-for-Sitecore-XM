@@ -2,7 +2,6 @@
 {
     public enum InterestingEntriesAlgorithm
     {
-        PageViews,
         Comments,
         Custom
     }

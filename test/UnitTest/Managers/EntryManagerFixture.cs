@@ -1,10 +1,8 @@
 ﻿using Moq;
 using NUnit.Framework;
-using Sitecore.Abstractions;
 using Sitecore.Buckets.Util;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
-using Sitecore.ContentSearch.Security;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.FakeDb;
@@ -1427,62 +1425,6 @@ namespace Sitecore.Modules.WeBlog.UnitTest.Managers
             }
         }
 
-        //[Test]
-        //[TestCase("Analytics.Enabled", "false", 0, TestName = "Analytics disabled")]
-        //[TestCase("Analytics.Enabled", "true", 1, TestName = "Analytics enabled")]
-        //[TestCase("Xdb.Enabled", "false", 0, TestName = "Xdb disabled")]
-        //[TestCase("Xdb.Enabled", "true", 1)]
-        //public void GetPopularEntriesByView_DifferentAnalyticsState(string settingName, string settingValue, int expected)
-        //{
-        //    var settings = MockSettings(ID.NewID);
-        //    var manager = new TestableEntryManager(settings, 1);
-
-        //    using (var db = new Db
-        //    {
-        //        new DbItem("blog", ID.NewID, settings.BlogTemplateIds.First()) {
-        //            new DbItem("2013", ID.NewID, ID.NewID)
-        //            {
-        //                new DbItem("entry1", ID.NewID, settings.EntryTemplateIds.First())
-        //            }
-        //        }
-        //    })
-        //    {
-        //        try
-        //        {
-        //            // Assign
-        //            var blogItem = db.GetItem("/sitecore/content/blog");
-        //            var entry1 = db.GetItem("/sitecore/content/blog/2013/entry1");
-        //            var index = new Mock<ISearchIndex>();
-        //            ContentSearchManager.SearchConfiguration.Indexes.Add(IndexName, index.Object);
-
-        //            var srItem = new Mock<EntryResultItem>();
-        //            srItem.Setup(x => x.GetItem()).Returns(entry1);
-        //            srItem.Setup(x => x.Uri).Returns(entry1.Uri);
-        //            srItem.Setup(x => x.TemplateId).Returns(settings.EntryTemplateIds.First());
-        //            srItem.Setup(x => x.Paths).Returns(new[] { blogItem.ID });
-        //            srItem.Setup(x => x.Language).Returns(blogItem.Language.ToString);
-        //            srItem.Setup(x => x.DatabaseName).Returns(blogItem.Database.Name);
-
-        //            index.Setup(i => i.CreateSearchContext(It.IsAny<SearchSecurityOptions>()).GetQueryable<EntryResultItem>())
-        //                .Returns(new EnumerableQuery<EntryResultItem>(new[] { srItem.Object }));
-
-        //            db.Configuration.Settings[settingName] = settingValue;
-
-        //            // Act
-        //            var entryItems = manager.GetPopularEntriesByView(blogItem, 10);
-
-        //            // Assert
-        //            Assert.That(entryItems.Count, Is.EqualTo(expected));
-
-        //        }
-        //        finally
-        //        {
-        //            ContentSearchManager.SearchConfiguration.Indexes.Remove(IndexName);
-        //        }
-
-        //    }
-        //}
-
         private IWeBlogSettings MockSettings(params ID[] entryTemplateIds)
         {
             return Mock.Of<IWeBlogSettings>(x =>
@@ -1496,7 +1438,6 @@ namespace Sitecore.Modules.WeBlog.UnitTest.Managers
 
         private EntryManager CreateManager(IWeBlogSettings settings)
         {
-            //return new EntryManager(null, null, settings, 
             return new EntryManager(null, settings,
                 commentManager: Mock.Of<ICommentManager>(),
                 templateManager: TemplateFactory.CreateTemplateManager(settings.BlogTemplateIds.Concat(settings.EntryTemplateIds).ToArray()),
@@ -1510,7 +1451,6 @@ namespace Sitecore.Modules.WeBlog.UnitTest.Managers
         private long _viewCount = 0;
 
         public TestableEntryManager(IWeBlogSettings settings, long viewCount)
-            //: base(null, null, settings,
             : base(null, settings,
                   commentManager: Mock.Of<ICommentManager>(),
                   templateManager: TemplateFactory.CreateTemplateManager(settings.BlogTemplateIds.Concat(settings.EntryTemplateIds).ToArray()),
@@ -1519,10 +1459,5 @@ namespace Sitecore.Modules.WeBlog.UnitTest.Managers
         {
             _viewCount = viewCount;
         }
-
-        //protected override long GetItemViews(ID itemId)
-        //{
-        //    return _viewCount;
-        //}
     }
 }

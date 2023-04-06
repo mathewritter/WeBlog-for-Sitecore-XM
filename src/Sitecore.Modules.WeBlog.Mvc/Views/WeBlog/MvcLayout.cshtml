@@ -1,5 +1,4 @@
 ﻿@using Sitecore.Modules.WeBlog.Extensions
-@*@using Sitecore.Mvc.Analytics.Extensions*@
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 <!doctype html>
@@ -12,7 +11,6 @@
     @Html.Sitecore().Rendering("{CFBDF43B-D3D4-4F5F-BDE8-BFDA3EDA3778}", new { Cacheable = true, CacheKey = "BlogSyndication", Cache_VaryByData = true })
     @Html.Sitecore().Rendering("{9AF6BA6B-221F-4549-93C5-B66DB5DF6429}", new { Cacheable = true, CacheKey = "RsdIncludes", Cache_VaryByData = true })
     @Html.Sitecore().Rendering("{1870D7B4-6FF0-49F2-A2EF-99C86C0EF21A}", new { Cacheable = true, CacheKey = "ThemeStylesheets", Cache_VaryByData = true })
-    @*@Html.Sitecore().VisitorIdentification()*@
 </head>
 <body>
     @Html.Sitecore().Placeholder("weblog-content")

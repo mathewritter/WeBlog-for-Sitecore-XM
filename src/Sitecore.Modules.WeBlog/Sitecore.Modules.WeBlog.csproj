@@ -26,7 +26,6 @@
     <PackageReference Include="Sitecore.Kernel" Version="10.3.0" />
     <PackageReference Include="Sitecore.Services.Core" Version="10.3.0" />
     <PackageReference Include="Sitecore.Services.Infrastructure" Version="10.3.0" />
-    <!--<PackageReference Include="Sitecore.Xdb.Reporting" Version="10.3.0" />-->
   </ItemGroup>
 	<ItemGroup Condition="$(Configuration.Contains('sc10.2'))">
 		<PackageReference Include="Sitecore.Analytics" Version="10.2.0" />
@@ -37,7 +36,6 @@
 		<PackageReference Include="Sitecore.Kernel" Version="10.2.0" />
 		<PackageReference Include="Sitecore.Services.Core" Version="10.2.0" />
 		<PackageReference Include="Sitecore.Services.Infrastructure" Version="10.2.0" />
-		<PackageReference Include="Sitecore.Xdb.Reporting" Version="10.2.0" />
 	</ItemGroup>
 	<ItemGroup Condition="$(Configuration.Contains('sc10.1'))">
 		<PackageReference Include="Sitecore.Analytics" Version="10.1.0" />
@@ -48,7 +46,6 @@
 		<PackageReference Include="Sitecore.Kernel" Version="10.1.0" />
 		<PackageReference Include="Sitecore.Services.Core" Version="10.1.0" />
 		<PackageReference Include="Sitecore.Services.Infrastructure" Version="10.1.0" />
-		<PackageReference Include="Sitecore.Xdb.Reporting" Version="10.1.0" />
 	</ItemGroup>
 	<ItemGroup Condition="$(Configuration.Contains('sc10.0'))">
 		<PackageReference Include="Sitecore.Analytics" Version="10.0.0" />
@@ -59,7 +56,6 @@
 		<PackageReference Include="Sitecore.Kernel" Version="10.0.0" />
 		<PackageReference Include="Sitecore.Services.Core" Version="10.0.0" />
 		<PackageReference Include="Sitecore.Services.Infrastructure" Version="10.0.0" />
-		<PackageReference Include="Sitecore.Xdb.Reporting" Version="10.0.0" />
 	</ItemGroup>
 	<ItemGroup Condition="$(Configuration.Contains('sc9.3'))">
 		<PackageReference Include="Sitecore.Analytics" Version="9.3.0" />
@@ -70,7 +66,6 @@
 		<PackageReference Include="Sitecore.Kernel" Version="9.3.0" />
 		<PackageReference Include="Sitecore.Services.Core" Version="9.3.0" />
 		<PackageReference Include="Sitecore.Services.Infrastructure" Version="9.3.0" />
-		<PackageReference Include="Sitecore.Xdb.Reporting" Version="9.3.0" />
 	</ItemGroup>
 	<ItemGroup Condition="$(Configuration.Contains('sc9.2'))">
 		<PackageReference Include="Sitecore.Analytics" Version="9.2.0" />
@@ -81,7 +76,6 @@
 		<PackageReference Include="Sitecore.Kernel" Version="9.2.0" />
 		<PackageReference Include="Sitecore.Services.Core" Version="9.2.0" />
 		<PackageReference Include="Sitecore.Services.Infrastructure" Version="9.2.0" />
-		<PackageReference Include="Sitecore.Xdb.Reporting" Version="9.2.0" />
 	</ItemGroup>
 	<ItemGroup Condition="$(Configuration.Contains('sc9.1'))">
 		<PackageReference Include="Sitecore.Analytics" Version="9.1.1" />
@@ -92,7 +86,6 @@
 		<PackageReference Include="Sitecore.Kernel" Version="9.1.1" />
 		<PackageReference Include="Sitecore.Services.Core" Version="9.1.1" />
 		<PackageReference Include="Sitecore.Services.Infrastructure" Version="9.1.1" />
-		<PackageReference Include="Sitecore.Xdb.Reporting" Version="9.1.1" />
 	</ItemGroup>
 	<ItemGroup>
 		<Content Include="App_Config\Include\WeBlog.Client.config" />

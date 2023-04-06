@@ -7,16 +7,13 @@ using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.DependencyInjection;
 using Sitecore.Diagnostics;
-//using Sitecore.Modules.WeBlog.Analytics.Reporting;
 using Sitecore.Modules.WeBlog.Caching;
 using Sitecore.Modules.WeBlog.Configuration;
 using Sitecore.Modules.WeBlog.Data.Items;
-using Sitecore.Modules.WeBlog.Diagnostics;
 using Sitecore.Modules.WeBlog.Extensions;
 using Sitecore.Modules.WeBlog.Model;
 using Sitecore.Modules.WeBlog.Search;
 using Sitecore.Modules.WeBlog.Search.SearchTypes;
-//using Sitecore.Xdb.Reporting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -205,7 +202,7 @@ namespace Sitecore.Modules.WeBlog.Managers
                     }
                 ).ToList();
 
-                
+
                 var hasMore = entries.Count > criteria.PageSize;
 
                 var entriesPage = entries.Take(criteria.PageSize).ToList();
@@ -216,27 +213,6 @@ namespace Sitecore.Modules.WeBlog.Managers
                 return results;
             }
         }
-
-        ///// <summary>
-        ///// Gets the most popular entries for the blog by the number of page views.
-        ///// </summary>
-        ///// <param name="blogItem">The blog to find the most popular pages for.</param>
-        ///// <param name="maxCount">The maximum number of entries to return.</param>
-        ///// <returns>The <see cref="ItemUri"/> for the entry items.</returns>
-        //public virtual IList<ItemUri> GetPopularEntriesByView(Item blogItem, int maxCount)
-        //{
-        //    var analyticsEnabled = IsAnalyticsEnabled();
-        //    if (analyticsEnabled)
-        //    {
-        //        var blogEntries = GetBlogEntries(blogItem, EntryCriteria.AllEntries, ListOrder.Descending);
-
-        //        return blogEntries.Results.OrderByDescending(x => GetItemViews(x.Uri.ItemID)).Select(x => x.Uri).Take(maxCount).ToList();
-        //    }
-
-        //    Logger.Warn("Sitecore.Analytics must be enabled to get popular entries by view.", this);
-
-        //    return new ItemUri[0];
-        //}
 
         /// <summary>
         /// Gets the most popular entries for the blog by the number of comments on the entry.
@@ -270,23 +246,6 @@ namespace Sitecore.Modules.WeBlog.Managers
             return Sitecore.Configuration.Settings.GetBoolSetting("Analytics.Enabled", false) ||
                    Sitecore.Configuration.Settings.GetBoolSetting("Xdb.Enabled", false);
         }
-
-        ///// <summary>
-        ///// Gets the number of views for the item given by ID.
-        ///// </summary>
-        ///// <param name="itemId">The ID of the item to get the views for.</param>
-        ///// <returns>The number of views for the item.</returns>
-        //protected virtual long GetItemViews(ID itemId)
-        //{
-        //    var query = new ItemVisitsQuery(this.ReportDataProvider)
-        //    {
-        //        ItemId = itemId
-        //    };
-
-        //    query.Execute();
-
-        //    return query.Visits;
-        //}
 
         protected IProviderSearchContext CreateSearchContext(Item blogRootItem)
         {
