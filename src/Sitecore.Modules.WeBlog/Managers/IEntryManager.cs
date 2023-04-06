@@ -26,13 +26,13 @@ namespace Sitecore.Modules.WeBlog.Managers
         /// <returns>The entries matching the criteria.</returns>
         SearchResults<Entry> GetBlogEntries(Item blogRootItem, EntryCriteria criteria, ListOrder resultOrder);
 
-        /// <summary>
-        /// Gets the most popular entries for the blog by the number of page views.
-        /// </summary>
-        /// <param name="blogItem">The blog to find the most popular pages for.</param>
-        /// <param name="maxCount">The maximum number of entries to return.</param>
-        /// <returns>The <see cref="ItemUri"/> for the entry items.</returns>
-        IList<ItemUri> GetPopularEntriesByView(Item blogItem, int maxCount);
+        ///// <summary>
+        ///// Gets the most popular entries for the blog by the number of page views.
+        ///// </summary>
+        ///// <param name="blogItem">The blog to find the most popular pages for.</param>
+        ///// <param name="maxCount">The maximum number of entries to return.</param>
+        ///// <returns>The <see cref="ItemUri"/> for the entry items.</returns>
+        //IList<ItemUri> GetPopularEntriesByView(Item blogItem, int maxCount);
 
         /// <summary>
         /// Gets the most popular entries for the blog by the number of comments on the entry.

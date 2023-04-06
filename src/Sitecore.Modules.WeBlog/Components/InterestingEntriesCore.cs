@@ -51,9 +51,9 @@ namespace Sitecore.Modules.WeBlog.Components
                     uris = EntryManagerInstance.GetPopularEntriesByComment(blogItem, maxCount);
                     break;
 
-                case InterestingEntriesAlgorithm.PageViews:
-                    uris = EntryManagerInstance.GetPopularEntriesByView(blogItem, maxCount);
-                    break;
+                //case InterestingEntriesAlgorithm.PageViews:
+                //    uris = EntryManagerInstance.GetPopularEntriesByView(blogItem, maxCount);
+                //    break;
             }
 
             var entryItems = new List<EntryItem>();

@@ -3,7 +3,7 @@ using NUnit.Framework;
 using Sitecore.Data;
 using Sitecore.Modules.WeBlog.Managers;
 using Sitecore.Modules.WeBlog.Search;
-using Sitecore.Xdb.Reporting;
+//using Sitecore.Xdb.Reporting;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -557,65 +557,65 @@ namespace Sitecore.Modules.WeBlog.IntegrationTest.Managers
             Assert.That(entries, Is.Empty);
         }
 
-        [Test]
-        public void GetPopularEntriesByView_ValidItem()
-        {
-            VerifyAnalyticsSetup();
+        //[Test]
+        //public void GetPopularEntriesByView_ValidItem()
+        //{
+        //    VerifyAnalyticsSetup();
 
-            var blog = TestUtil.CreateNewBlog(TestContentRoot);
-            var entryLuna = TestUtil.CreateNewEntry(blog, "Luna");
-            var entryDeimos = TestUtil.CreateNewEntry(blog, "Deimos");
-            var entryPhobos = TestUtil.CreateNewEntry(blog, "Phobos");
-            TestUtil.UpdateIndex();
+        //    var blog = TestUtil.CreateNewBlog(TestContentRoot);
+        //    var entryLuna = TestUtil.CreateNewEntry(blog, "Luna");
+        //    var entryDeimos = TestUtil.CreateNewEntry(blog, "Deimos");
+        //    var entryPhobos = TestUtil.CreateNewEntry(blog, "Phobos");
+        //    TestUtil.UpdateIndex();
 
-            var manager = CreateEntryManagerForAnalyticsTest(entryLuna.ID, entryPhobos.ID, entryDeimos.ID);
+        //    var manager = CreateEntryManagerForAnalyticsTest(entryLuna.ID, entryPhobos.ID, entryDeimos.ID);
 
-            var entries = manager.GetPopularEntriesByView(blog, int.MaxValue);
-            var entryIds = from entry in entries select entry.ItemID;
+        //    var entries = manager.GetPopularEntriesByView(blog, int.MaxValue);
+        //    var entryIds = from entry in entries select entry.ItemID;
 
-            Assert.That(entryIds, Is.EqualTo(new[] { entryLuna.ID, entryPhobos.ID, entryDeimos.ID }));
-        }
+        //    Assert.That(entryIds, Is.EqualTo(new[] { entryLuna.ID, entryPhobos.ID, entryDeimos.ID }));
+        //}
 
-        [Test]
-        public void GetPopularEntriesByView_ValidItem_Limited()
-        {
-            VerifyAnalyticsSetup();
+        //[Test]
+        //public void GetPopularEntriesByView_ValidItem_Limited()
+        //{
+        //    VerifyAnalyticsSetup();
 
-            var blog = TestUtil.CreateNewBlog(TestContentRoot);
-            var entryLuna = TestUtil.CreateNewEntry(blog, "Luna");
-            var entryDeimos = TestUtil.CreateNewEntry(blog, "Deimos");
-            var entryPhobos = TestUtil.CreateNewEntry(blog, "Phobos");
-            TestUtil.UpdateIndex();
+        //    var blog = TestUtil.CreateNewBlog(TestContentRoot);
+        //    var entryLuna = TestUtil.CreateNewEntry(blog, "Luna");
+        //    var entryDeimos = TestUtil.CreateNewEntry(blog, "Deimos");
+        //    var entryPhobos = TestUtil.CreateNewEntry(blog, "Phobos");
+        //    TestUtil.UpdateIndex();
 
-            var manager = CreateEntryManagerForAnalyticsTest(entryLuna.ID, entryPhobos.ID, entryDeimos.ID);
+        //    var manager = CreateEntryManagerForAnalyticsTest(entryLuna.ID, entryPhobos.ID, entryDeimos.ID);
 
-            var entries = manager.GetPopularEntriesByView(blog, 1);
-            var entryIds = from entry in entries select entry.ItemID;
+        //    var entries = manager.GetPopularEntriesByView(blog, 1);
+        //    var entryIds = from entry in entries select entry.ItemID;
 
-            Assert.That(entryIds, Is.EqualTo(new[] { entryLuna.ID }));
-        }
+        //    Assert.That(entryIds, Is.EqualTo(new[] { entryLuna.ID }));
+        //}
 
-        [Test]
-        public void GetPopularEntriesByView_InvalidItem()
-        {
-            VerifyAnalyticsSetup();
+        //[Test]
+        //public void GetPopularEntriesByView_InvalidItem()
+        //{
+        //    VerifyAnalyticsSetup();
 
-            var manager = CreateEntryManagerForAnalyticsTest();
-            var entries = manager.GetPopularEntriesByView(TestContentRoot, int.MaxValue);
+        //    var manager = CreateEntryManagerForAnalyticsTest();
+        //    var entries = manager.GetPopularEntriesByView(TestContentRoot, int.MaxValue);
 
-            Assert.That(entries, Is.Empty);
-        }
+        //    Assert.That(entries, Is.Empty);
+        //}
 
-        [Test]
-        public void GetPopularEntriesByView_NullItem()
-        {
-            VerifyAnalyticsSetup();
+        //[Test]
+        //public void GetPopularEntriesByView_NullItem()
+        //{
+        //    VerifyAnalyticsSetup();
 
-            var manager = CreateEntryManagerForAnalyticsTest();
-            var entries = manager.GetPopularEntriesByView(null, int.MaxValue);
+        //    var manager = CreateEntryManagerForAnalyticsTest();
+        //    var entries = manager.GetPopularEntriesByView(null, int.MaxValue);
 
-            Assert.That(entries, Is.Empty);
-        }
+        //    Assert.That(entries, Is.Empty);
+        //}
 
 
 
@@ -629,34 +629,34 @@ namespace Sitecore.Modules.WeBlog.IntegrationTest.Managers
             Assert.True(enabled, "Sitecore.Analytics must be enabled to test");
         }
 
-        private EntryManager CreateEntryManagerForAnalyticsTest(params ID[] popularEntryIdsInOrder)
-        {
-            var reportProvider = CreateMockReportDataProvider(popularEntryIdsInOrder);
-            return new EntryManager(reportProvider, null, null, null, null);
-        }
+        //private EntryManager CreateEntryManagerForAnalyticsTest(params ID[] popularEntryIdsInOrder)
+        //{
+        //    var reportProvider = CreateMockReportDataProvider(popularEntryIdsInOrder);
+        //    return new EntryManager(reportProvider, null, null, null, null);
+        //}
 
-        private ReportDataProviderBase CreateMockReportDataProvider(IEnumerable<ID> ids)
-        {
-            var reportingProviderMock = new Mock<ReportDataProviderBase>();
+        //private ReportDataProviderBase CreateMockReportDataProvider(IEnumerable<ID> ids)
+        //{
+        //    var reportingProviderMock = new Mock<ReportDataProviderBase>();
 
-            var visitCount = ids.Count();
-            foreach (var id in ids)
-            {
-                var dataTable = new System.Data.DataTable();
-                dataTable.Columns.AddRange(new[]
-                {
-                    new DataColumn("Visits", typeof(long))
-                });
+        //    var visitCount = ids.Count();
+        //    foreach (var id in ids)
+        //    {
+        //        var dataTable = new System.Data.DataTable();
+        //        dataTable.Columns.AddRange(new[]
+        //        {
+        //            new DataColumn("Visits", typeof(long))
+        //        });
 
-                dataTable.Rows.Add(visitCount);
-                visitCount--;
+        //        dataTable.Rows.Add(visitCount);
+        //        visitCount--;
 
-                reportingProviderMock.Setup(x =>
-                    x.GetData(It.IsAny<string>(),
-                        It.Is<ReportDataQuery>(y => y.Parameters["@ItemId"].Equals(id)), It.IsAny<CachingPolicy>())).Returns(new ReportDataResponse(() => dataTable));
-            }
+        //        reportingProviderMock.Setup(x =>
+        //            x.GetData(It.IsAny<string>(),
+        //                It.Is<ReportDataQuery>(y => y.Parameters["@ItemId"].Equals(id)), It.IsAny<CachingPolicy>())).Returns(new ReportDataResponse(() => dataTable));
+        //    }
 
-            return reportingProviderMock.Object;
-        }
+        //    return reportingProviderMock.Object;
+        //}
     }
 }

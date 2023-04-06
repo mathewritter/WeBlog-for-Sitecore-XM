@@ -7,7 +7,7 @@ using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.DependencyInjection;
 using Sitecore.Diagnostics;
-using Sitecore.Modules.WeBlog.Analytics.Reporting;
+//using Sitecore.Modules.WeBlog.Analytics.Reporting;
 using Sitecore.Modules.WeBlog.Caching;
 using Sitecore.Modules.WeBlog.Configuration;
 using Sitecore.Modules.WeBlog.Data.Items;
@@ -16,7 +16,7 @@ using Sitecore.Modules.WeBlog.Extensions;
 using Sitecore.Modules.WeBlog.Model;
 using Sitecore.Modules.WeBlog.Search;
 using Sitecore.Modules.WeBlog.Search.SearchTypes;
-using Sitecore.Xdb.Reporting;
+//using Sitecore.Xdb.Reporting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,8 +48,8 @@ namespace Sitecore.Modules.WeBlog.Managers
         /// </summary>
         protected IBlogSettingsResolver BlogSettingsResolver { get; }
 
-        /// <summary>The <see cref="ReportDataProviderBase"/> to read reporting data from.</summary>
-        protected ReportDataProviderBase ReportDataProvider = null;
+        ///// <summary>The <see cref="ReportDataProviderBase"/> to read reporting data from.</summary>
+        //protected ReportDataProviderBase ReportDataProvider = null;
 
         /// <summary>
         /// The <see cref="BaseTemplateManager"/> used to access templates.
@@ -62,14 +62,14 @@ namespace Sitecore.Modules.WeBlog.Managers
         }
 
         public EntryManager(
-            ReportDataProviderBase reportDataProvider,
+            //ReportDataProviderBase reportDataProvider,
             IEntrySearchCache cache,
             IWeBlogSettings settings = null,
             ICommentManager commentManager = null,
             BaseTemplateManager templateManager = null,
             IBlogSettingsResolver blogSettingsResolver = null)
         {
-            ReportDataProvider = reportDataProvider;
+            //ReportDataProvider = reportDataProvider;
             Settings = settings ?? WeBlogSettings.Instance;
             EntryCache = cache ?? CacheManager.GetCache<IEntrySearchCache>(EntrySearchCache.CacheName);
             CommentManager = commentManager ?? ServiceLocator.ServiceProvider.GetRequiredService<ICommentManager>();
@@ -217,26 +217,26 @@ namespace Sitecore.Modules.WeBlog.Managers
             }
         }
 
-        /// <summary>
-        /// Gets the most popular entries for the blog by the number of page views.
-        /// </summary>
-        /// <param name="blogItem">The blog to find the most popular pages for.</param>
-        /// <param name="maxCount">The maximum number of entries to return.</param>
-        /// <returns>The <see cref="ItemUri"/> for the entry items.</returns>
-        public virtual IList<ItemUri> GetPopularEntriesByView(Item blogItem, int maxCount)
-        {
-            var analyticsEnabled = IsAnalyticsEnabled();
-            if (analyticsEnabled)
-            {
-                var blogEntries = GetBlogEntries(blogItem, EntryCriteria.AllEntries, ListOrder.Descending);
+        ///// <summary>
+        ///// Gets the most popular entries for the blog by the number of page views.
+        ///// </summary>
+        ///// <param name="blogItem">The blog to find the most popular pages for.</param>
+        ///// <param name="maxCount">The maximum number of entries to return.</param>
+        ///// <returns>The <see cref="ItemUri"/> for the entry items.</returns>
+        //public virtual IList<ItemUri> GetPopularEntriesByView(Item blogItem, int maxCount)
+        //{
+        //    var analyticsEnabled = IsAnalyticsEnabled();
+        //    if (analyticsEnabled)
+        //    {
+        //        var blogEntries = GetBlogEntries(blogItem, EntryCriteria.AllEntries, ListOrder.Descending);
 
-                return blogEntries.Results.OrderByDescending(x => GetItemViews(x.Uri.ItemID)).Select(x => x.Uri).Take(maxCount).ToList();
-            }
+        //        return blogEntries.Results.OrderByDescending(x => GetItemViews(x.Uri.ItemID)).Select(x => x.Uri).Take(maxCount).ToList();
+        //    }
 
-            Logger.Warn("Sitecore.Analytics must be enabled to get popular entries by view.", this);
+        //    Logger.Warn("Sitecore.Analytics must be enabled to get popular entries by view.", this);
 
-            return new ItemUri[0];
-        }
+        //    return new ItemUri[0];
+        //}
 
         /// <summary>
         /// Gets the most popular entries for the blog by the number of comments on the entry.
@@ -271,22 +271,22 @@ namespace Sitecore.Modules.WeBlog.Managers
                    Sitecore.Configuration.Settings.GetBoolSetting("Xdb.Enabled", false);
         }
 
-        /// <summary>
-        /// Gets the number of views for the item given by ID.
-        /// </summary>
-        /// <param name="itemId">The ID of the item to get the views for.</param>
-        /// <returns>The number of views for the item.</returns>
-        protected virtual long GetItemViews(ID itemId)
-        {
-            var query = new ItemVisitsQuery(this.ReportDataProvider)
-            {
-                ItemId = itemId
-            };
+        ///// <summary>
+        ///// Gets the number of views for the item given by ID.
+        ///// </summary>
+        ///// <param name="itemId">The ID of the item to get the views for.</param>
+        ///// <returns>The number of views for the item.</returns>
+        //protected virtual long GetItemViews(ID itemId)
+        //{
+        //    var query = new ItemVisitsQuery(this.ReportDataProvider)
+        //    {
+        //        ItemId = itemId
+        //    };
 
-            query.Execute();
+        //    query.Execute();
 
-            return query.Visits;
-        }
+        //    return query.Visits;
+        //}
 
         protected IProviderSearchContext CreateSearchContext(Item blogRootItem)
         {
