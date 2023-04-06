@@ -1,8 +1,8 @@
-# WeBlog #
+# WeBlog for Sitecore XM #
 
-A blog module for Sitecore.
+A blog module for Sitecore XM.
 
-> :warning: The original WeBlog is no longer being developed or maintained. This is a fork.
+> :warning: The original WeBlog is no longer being developed or maintained.
 
 ## Features ##
 
