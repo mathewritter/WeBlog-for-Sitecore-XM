@@ -41,7 +41,7 @@ The WeBlog themes use Grunt as a toolchain and are not included in the Visual St
 
 1. Execute `npm install` in the `src/Themes` directory to restore the node packages.
 1. Execute `bower install` in the `src/Themes` directory to restore the bower packages.
-1. Execute `grunt` in the `src/Themes` directory to build the themes and deploy to the default (Sitecore 10.1) Sitecore instance.
+1. Execute `grunt` in the `src/Themes` directory to build the themes and deploy to the default (Sitecore 10.3) Sitecore instance.
 	1. Paths for Sitecore instaces are read from the `deploy.props` file above.
 	1. To deploy the themes to a different target instance, pass the `--scversion` parameter to `grunt`:
 	
