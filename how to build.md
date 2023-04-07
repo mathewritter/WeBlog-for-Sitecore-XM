@@ -45,7 +45,7 @@ The WeBlog themes use Grunt as a toolchain and are not included in the Visual St
 	1. Paths for Sitecore instaces are read from the `deploy.props` file above.
 	1. To deploy the themes to a different target instance, pass the `--scversion` parameter to `grunt`:
 	
-			grunt --scversion=sc9.3
+			grunt --scversion=sc10.3
 
 ## Create Solr Cores ##
 
